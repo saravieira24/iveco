@@ -21,7 +21,7 @@ for col in colunas:
     new_data[col] = st.text_input(f"{col}")
 
 if st.button("Adicionar Negócio"):
-    df = df.append(new_data, ignore_index=True)
+    df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
     st.success("Negócio adicionado com sucesso!")
 
 # Exibir a tabela com os negócios cadastrados
